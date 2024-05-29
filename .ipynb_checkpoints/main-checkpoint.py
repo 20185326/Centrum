@@ -1,4 +1,3 @@
-import nest_asyncio
 import uvicorn
 from fastapi import FastAPI
 from email.mime.multipart import MIMEMultipart
@@ -26,9 +25,6 @@ def enviar_correos():
     #gestor.imprimir_informacion_por_RDV()
     gestor.enviar_notificacion_por_correo()
     return {"message": "Tarea de envío de correos encolada"}
-
-# Permite la reutilización del bucle de eventos
-nest_asyncio.apply()
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
